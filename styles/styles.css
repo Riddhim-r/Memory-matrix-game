@@ -1,0 +1,130 @@
+/* Header at the top */
+header {
+    width: 100%;
+    background-color: #c017a339;
+    color: #580d3f;
+    text-align: center;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    padding: 20px;
+    border: 5px solid #000;
+    z-index: 100;
+    font-size: 2em
+}
+
+/* Main content */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #dcdaa151    
+}
+
+p {
+    text-align: center;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-size: 1.5em
+}
+
+p a {
+    color: rgb(25, 14, 30);
+    text-decoration: none;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-size: 1.5em
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    gap: 10px;
+    width: 100%;
+    max-width: 520px;
+    padding-top: 15px;
+}
+
+.card {
+    width: 100%;
+    aspect-ratio: 1;
+    background-image: url(https://i.pinimg.com/736x/8e/16/d2/8e16d2d415d64c77eeeeca806d548be7.jpg);
+    background-size: contain;
+    border: 2px solid #580d3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    height: 125px;
+    background-color: #765be0;    
+    font-size: 24px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card.flipped img {
+    display: block;
+}
+.matched {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: confetti-fall 3s linear infinite;
+    z-index: 9999; /* Ensure confetti is above other elements */
+}
+
+.confetti.small {
+    width: 5px;
+    height: 5px;
+}
+
+.confetti.medium {
+    width: 10px;
+    height: 10px;
+}
+
+.confetti.large {
+    width: 15px;
+    height: 15px;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+#CONGRATSSSS {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-size: 3em; 
+    text-align: center;
+    margin-top: 20px;
+}
+
+#Once Moreee {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-size: 1.5em; 
+    padding: 30px 30px;
+    margin-top: 50px;
+    cursor: pointer;
+}
